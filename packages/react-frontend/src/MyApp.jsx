@@ -10,12 +10,23 @@ function MyApp() {
     });
     setCharacters(updated);
   }
+  function updateList(person) {
+    setCharacters([...characters, person]);
+  }
   return (
-  <div className="container">
-    <Table characterData={characters} removeCharacter={removeOneCharacter} />
-    <Form />
-  </div>
+    <div className="container">
+      <Table characterData={characters} removeCharacter={removeOneCharacter} />
+      <Form handleSubmit={updateList} />
+    </div>
   );
 }
 
 export default MyApp;
+
+/*
+Site has container, table & form
+List of characters kept here, passed down to table & alterable by form
+
+
+
+*/
